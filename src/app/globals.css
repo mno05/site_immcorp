@@ -1,26 +1,139 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════
+   IMM CORPORATION SARL — Design System
+   Palette: Gold + Charcoal + Warm Neutrals
+   ══════════════════════════════════════════════ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --gold-50: #FBF8EF;
+  --gold-100: #F5EDD3;
+  --gold-200: #EADAA4;
+  --gold-300: #DCBF6B;
+  --gold-400: #D4AF37;
+  --gold-500: #B8960C;
+  --gold-600: #9A7B08;
+  --gold-700: #7A5F0A;
+  --gold-800: #5E4A0E;
+  --gold-900: #4A3A0D;
+
+  /* Light mode */
+  --background: #FFFFFF;
+  --background-secondary: #F9F8F5;
+  --background-tertiary: #F1EFE9;
+  --foreground: #1C1C1E;
+  --foreground-secondary: #4A4A4E;
+  --foreground-muted: #8E8E93;
+  --border: #E5E4DF;
+  --border-strong: #D1D0CB;
+  --card: #FFFFFF;
+  --card-hover: #FDFCFA;
+  --primary: #B8960C;
+  --primary-hover: #9A7B08;
+  --primary-foreground: #FFFFFF;
+  --accent: #D4AF37;
+  --accent-foreground: #1C1C1E;
+  --ring: #D4AF37;
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --navbar-border: rgba(229, 228, 223, 0.8);
+  --section-overlay: rgba(255, 255, 255, 0.6);
+  --shadow-color: rgba(0, 0, 0, 0.06);
+  --shadow-strong: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --background: #0C0C0E;
+  --background-secondary: #141416;
+  --background-tertiary: #1C1C1E;
+  --foreground: #F0EDE6;
+  --foreground-secondary: #B0ADA6;
+  --foreground-muted: #6E6E73;
+  --border: #2C2C2E;
+  --border-strong: #3A3A3C;
+  --card: #1C1C1E;
+  --card-hover: #222224;
+  --primary: #D4AF37;
+  --primary-hover: #E0C050;
+  --primary-foreground: #0C0C0E;
+  --accent: #B8960C;
+  --accent-foreground: #F0EDE6;
+  --ring: #D4AF37;
+  --navbar-bg: rgba(12, 12, 14, 0.85);
+  --navbar-border: rgba(44, 44, 46, 0.8);
+  --section-overlay: rgba(12, 12, 14, 0.6);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-strong: rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-tertiary: var(--background-tertiary);
   --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-navbar-bg: var(--navbar-bg);
+  --color-navbar-border: var(--navbar-border);
+  --color-shadow-color: var(--shadow-color);
+  --color-shadow-strong: var(--shadow-strong);
+
+  --color-gold-50: var(--gold-50);
+  --color-gold-100: var(--gold-100);
+  --color-gold-200: var(--gold-200);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  --color-gold-800: var(--gold-800);
+  --color-gold-900: var(--gold-900);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--gold-400);
+  color: #fff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
 }

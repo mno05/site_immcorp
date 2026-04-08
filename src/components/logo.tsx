@@ -1,0 +1,58 @@
+export function Logo({ className = "", size = 40 }: { className?: string; size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-label="IMM Corporation Logo"
+    >
+      {/* Globe/dome structure */}
+      <path
+        d="M50 10C28 10 15 30 15 50C15 50 30 55 50 55C70 55 85 50 85 50C85 30 72 10 50 10Z"
+        stroke="currentColor"
+        strokeWidth="3"
+        fill="none"
+        className="text-foreground"
+      />
+      <path
+        d="M50 10C40 10 33 30 33 50C33 50 40 55 50 55C60 55 67 50 67 50C67 30 60 10 50 10Z"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        fill="none"
+        className="text-foreground"
+      />
+      <path
+        d="M20 38H80"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="text-foreground"
+      />
+      {/* Gold ellipse orbit */}
+      <ellipse
+        cx="50"
+        cy="58"
+        rx="38"
+        ry="12"
+        stroke="#D4AF37"
+        strokeWidth="3"
+        fill="none"
+      />
+    </svg>
+  );
+}
+
+export function LogoFull({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-2 ${className}`}>
+      <Logo size={36} />
+      <div className="flex items-baseline gap-1">
+        <span className="text-lg font-light tracking-wide text-foreground">IMM</span>
+        <span className="text-lg font-bold tracking-wide text-foreground">CORPORATION</span>
+        <span className="text-xs font-light tracking-widest text-foreground-muted">SARL</span>
+      </div>
+    </div>
+  );
+}
