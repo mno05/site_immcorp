@@ -73,7 +73,7 @@ export function ProcessSection() {
                 <div className={`lg:w-[calc(50%-2rem)] ${isEven ? "lg:text-right" : "lg:text-left"}`}>
                   <div className="rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-gold-400/30 hover:shadow-[0_4px_20px_var(--shadow-color)]">
                     <div className={`flex items-center gap-3 ${isEven ? "lg:flex-row-reverse" : ""}`}>
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-50 dark:bg-gold-900/30">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-50! dark:bg-gold-900/30">
                         <item.icon className="h-5 w-5 text-gold-600 dark:text-gold-400" />
                       </div>
                       <div>

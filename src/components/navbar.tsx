@@ -40,7 +40,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-navbar-bg backdrop-blur-xl border-b border-navbar-border shadow-[0_1px_3px_var(--shadow-color)]"
+          ? "bg-navbar-bg backdrop-blur-xl shadow-[0_1px_3px_var(--shadow-color)]"
           : "bg-transparent"
       }`}
     >
@@ -55,7 +55,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-foreground-secondary transition-colors hover:bg-background-tertiary hover:text-foreground"
+              className="rounded-lg px-3 py-2 text-sm text-foreground font-medium transition-colors hover:bg-background-tertiary hover:text-foreground"
             >
               {link.label}
             </a>

@@ -88,7 +88,7 @@ export function ServicesSection() {
             />
 
             <div className="relative p-7">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gold-50 transition-colors group-hover:bg-gold-100 dark:bg-gold-900/30 dark:group-hover:bg-gold-900/50">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gold-50! transition-colors group-hover:bg-gold-100 dark:bg-gold-900/30 dark:group-hover:bg-gold-900/50">
                 <service.icon className="h-6 w-6 text-gold-600 dark:text-gold-400" />
               </div>
 

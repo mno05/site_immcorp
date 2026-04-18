@@ -52,7 +52,7 @@ export function AboutSection() {
           >
             <div className="absolute top-0 right-0 h-32 w-32 bg-linear-to-bl from-gold-400/5 to-transparent" />
             <div className="relative">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gold-50 transition-colors group-hover:bg-gold-100 dark:bg-gold-900/30 dark:group-hover:bg-gold-900/50">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gold-50! transition-colors group-hover:bg-gold-100 dark:bg-gold-900/30 dark:group-hover:bg-gold-900/50">
                 <item.icon className="h-6 w-6 text-gold-600 dark:text-gold-400" />
               </div>
               <h3 className="text-xl font-bold text-foreground">{item.title}</h3>

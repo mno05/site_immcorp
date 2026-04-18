@@ -75,7 +75,7 @@ export function WhyUsSection() {
             transition={{ delay: i * 0.08, duration: 0.5 }}
             className={`group relative overflow-hidden rounded-2xl border p-7 transition-all duration-300 hover:shadow-[0_8px_30px_var(--shadow-color)] ${
               item.highlight
-                ? "border-gold-400/40 bg-linear-to-br from-gold-50/80 via-card to-card dark:border-gold-700/40 dark:from-gold-900/20 dark:via-card dark:to-card"
+                ? "border-gold-400/40 bg-linear-to-br from-gold-50/80! via-card! to-card! dark:border-gold-700/40 dark:from-gold-900/20 dark:via-card! dark:to-card!"
                 : "border-border bg-card hover:border-gold-400/30"
             }`}
           >
@@ -84,7 +84,7 @@ export function WhyUsSection() {
                 className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors ${
                   item.highlight
                     ? "bg-primary text-primary-foreground"
-                    : "bg-gold-50 dark:bg-gold-900/30"
+                    : "bg-gold-50! dark:bg-gold-900/30"
                 }`}
               >
                 <item.icon

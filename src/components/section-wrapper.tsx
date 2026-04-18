@@ -52,7 +52,7 @@ export function SectionHeader({
   return (
     <div className={`mb-16 max-w-3xl ${alignClass}`}>
       {badge && (
-        <span className="mb-4 inline-block rounded-full border border-gold-300/40 bg-gold-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-700 dark:border-gold-700/40 dark:bg-gold-900/30 dark:text-gold-400">
+        <span className="mb-4 inline-block rounded-full border border-gold-300/40 bg-gold-50! px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-700 dark:border-gold-700/40 dark:bg-gold-900/30 dark:text-gold-400">
           {badge}
         </span>
       )}

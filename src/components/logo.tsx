@@ -1,3 +1,8 @@
+"use client";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
 export function Logo({ className = "", size = 40 }: { className?: string; size?: number }) {
   return (
     <svg
@@ -45,9 +50,20 @@ export function Logo({ className = "", size = 40 }: { className?: string; size?:
 }
 
 export function LogoFull({ className = "" }: { className?: string }) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+   useEffect(() => setMounted(true), []);
+
+  if (!mounted) return <div className="h-10 w-10" />; // Placeholder pendant le chargement
+
+  const src = resolvedTheme === "dark" ? "/images/logo-dark.png" : "/images/logo-light.png";
   return (
+    // <div>
+    //   
+    // </div>
     <div className={`flex items-center gap-2 ${className}`}>
-      <Logo size={36} />
+      <Image src={src} alt="IMM Corporation Logo" className="w-15 h-12" width={100} height={100} />
       <div className="flex items-baseline gap-1">
         <span className="text-lg font-light tracking-wide text-foreground">IMM</span>
         <span className="text-lg font-bold tracking-wide text-foreground">CORPORATION</span>

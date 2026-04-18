@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Globe, Zap } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -15,13 +16,13 @@ export function Hero() {
         <div className="absolute -top-40 right-0 h-[600px] w-[600px] rounded-full bg-linear-to-br from-gold-400/10 via-gold-300/5 to-transparent blur-3xl" />
         <div className="absolute bottom-0 -left-40 h-[500px] w-[500px] rounded-full bg-linear-to-tr from-gold-500/8 via-gold-400/4 to-transparent blur-3xl" />
         {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
+
+        <Image
+          src="/images/hero.png"
+          alt="Hero background"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 object-cover opacity-50 dark:opacity-30"
         />
       </div>
 
@@ -33,30 +34,31 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold-300/40 bg-gold-50/80 px-4 py-1.5 backdrop-blur-sm dark:border-gold-700/40 dark:bg-gold-900/20"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold-300/40 bg-gold-50/80! px-4 py-1.5 backdrop-blur-sm dark:border-gold-700/80 dark:bg-gold-900/20"
             >
               <span className="h-2 w-2 rounded-full bg-gold-500 animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-widest text-gold-700 dark:text-gold-400">
                 Excellence & Innovation
               </span>
-            </motion.div>
+            </motion.div> */}
 
             <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Votre partenaire de{" "}
-              <span className="bg-linear-to-r from-gold-600 via-gold-400 to-gold-500 bg-clip-text text-transparent dark:from-gold-400 dark:via-gold-300 dark:to-gold-500">
+              <span className="bg-linear-to-r from-gold-800 via-gold-500 to-gold-600 bg-clip-text text-transparent dark:from-gold-400 dark:via-gold-300 dark:to-gold-500">
                 confiance
               </span>{" "}
               en RDC
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-secondary">
-              IMM Corporation révolutionne l&apos;offre de services en République Démocratique
-              du Congo. Équipements de sécurité, solutions d&apos;hygiène et services
-              professionnels — au standard international.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground">
+              IMM Corporation révolutionne l&apos;offre de services en
+              République Démocratique du Congo. Équipements de sécurité,
+              solutions d&apos;hygiène et services professionnels — au standard
+              international.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -78,30 +80,38 @@ export function Hero() {
             {/* Mini trust badges */}
             <div className="mt-12 flex items-center gap-8">
               <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-50 dark:bg-gold-900/30">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-50! dark:bg-gold-900/30">
                   <Shield className="h-5 w-5 text-gold-600 dark:text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Certifié</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    Certifié
+                  </p>
                   <p className="text-xs text-foreground-muted">Qualité ISO</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-50 dark:bg-gold-900/30">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-50! dark:bg-gold-900/30">
                   <Globe className="h-5 w-5 text-gold-600 dark:text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">International</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    International
+                  </p>
                   <p className="text-xs text-foreground-muted">Standards EU</p>
                 </div>
               </div>
               <div className="hidden items-center gap-2 sm:flex">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-50 dark:bg-gold-900/30">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-50! dark:bg-gold-900/30">
                   <Zap className="h-5 w-5 text-gold-600 dark:text-gold-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Réactif</p>
-                  <p className="text-xs text-foreground-muted">Livraison rapide</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    Réactif
+                  </p>
+                  <p className="text-xs text-foreground-muted">
+                    Livraison rapide
+                  </p>
                 </div>
               </div>
             </div>
@@ -131,8 +141,12 @@ export function Hero() {
                         key={stat.label}
                         className="rounded-2xl border border-border bg-background-secondary p-5 transition-colors hover:border-gold-400/30"
                       >
-                        <p className="text-2xl font-bold text-primary">{stat.value}</p>
-                        <p className="mt-1 text-xs text-foreground-muted">{stat.label}</p>
+                        <p className="text-2xl font-bold text-primary">
+                          {stat.value}
+                        </p>
+                        <p className="mt-1 text-xs text-foreground-muted">
+                          {stat.label}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -149,12 +163,18 @@ export function Hero() {
               {/* Floating badge */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -top-4 -right-4 rounded-2xl border border-border bg-card px-4 py-3 shadow-lg"
               >
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                  <span className="text-xs font-semibold text-foreground">Disponible</span>
+                  <span className="text-xs font-semibold text-foreground">
+                    Disponible
+                  </span>
                 </div>
               </motion.div>
             </div>
