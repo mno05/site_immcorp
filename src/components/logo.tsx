@@ -59,15 +59,13 @@ export function LogoFull({ className = "" }: { className?: string }) {
 
   const src = resolvedTheme === "dark" ? "/images/logo-dark.png" : "/images/logo-light.png";
   return (
-    // <div>
-    //   
-    // </div>
+
     <div className={`flex items-center gap-2 ${className}`}>
-      <Image src={src} alt="IMM Corporation Logo" className="w-15 h-12" width={100} height={100} />
+      <Image src={src} alt="IMM Corporation Logo" className="w-10 md:w-15  h-9 md:h-12" width={100} height={100} />
       <div className="flex items-baseline gap-1">
-        <span className="text-lg font-light tracking-wide text-foreground">IMM</span>
-        <span className="text-lg font-bold tracking-wide text-foreground">CORPORATION</span>
-        <span className="text-xs font-light tracking-widest text-foreground-muted">SARL</span>
+        <span className="text-sm md:text-lg font-light tracking-wide text-foreground">IMM</span>
+        <span className="text-sm md:text-lg font-bold tracking-wide text-foreground">CORPORATION</span>
+        <span className="text-[8px] md:text-xs font-light tracking-widest text-foreground-muted">SARL</span>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ export function Hero() {
           alt="Hero background"
           width={1920}
           height={1080}
-          className="absolute inset-0 object-cover opacity-50 dark:opacity-30"
+          className="absolute inset-0 object-cover opacity-50 dark:opacity-30 h-180 md:h-full"
         />
       </div>
 
