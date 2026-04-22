@@ -18,6 +18,7 @@ export interface Translations {
     badge: string;
     title: string;
     titleHighlight: string;
+    titleEnd: string;
     subtitle: string;
     getQuote: string;
     discoverServices: string;
@@ -27,6 +28,10 @@ export interface Translations {
     internationalDesc: string;
     responsive: string;
     responsiveDesc: string;
+    clientsSatisfied: string;
+    yearsExperience: string;
+    projectsDelivered: string;
+    supportClient: string;
   };
   
   // Trust section
@@ -69,6 +74,7 @@ export interface Translations {
       title: string;
       description: string;
     };
+    locationDescription: string;
     location: string;
     address: string;
   };
@@ -179,6 +185,13 @@ export interface Translations {
     badge: string;
     title: string;
     subtitle: string;
+    testimonials: {
+      name: string;
+      role: string;
+      company: string;
+      content: string;
+      rating: number;
+    }[];
   };
   
   // CTA section
@@ -203,6 +216,8 @@ export interface Translations {
     legal: string;
     privacy: string;
     rights: string;
+    servicesList: string[];
+    companyList: string[];
   };
 }
 
@@ -219,9 +234,10 @@ export const translations: Record<Language, Translations> = {
       contactUs: "Nous contacter",
     },
     hero: {
-      badge: "Excellence & Innovation",
+      badge: "Disponible",
       title: "Votre partenaire de",
       titleHighlight: "confiance",
+      titleEnd: "en RDC",
       subtitle: "IMM Corporation révolutionne l'offre de services en République Démocratique du Congo. Équipements de sécurité, solutions d'hygiène et services professionnels - au standard international.",
       getQuote: "Demander un devis",
       discoverServices: "Découvrir nos services",
@@ -231,6 +247,10 @@ export const translations: Record<Language, Translations> = {
       internationalDesc: "Standards EU",
       responsive: "Réactif",
       responsiveDesc: "Livraison rapide",
+      clientsSatisfied: "Clients satisfaits",
+      yearsExperience: "Années d'expérience",
+      projectsDelivered: "Projets livrés",
+      supportClient: "Support client",
     },
     trust: {
       clients: "Clients actifs",
@@ -240,7 +260,7 @@ export const translations: Record<Language, Translations> = {
       theyTrustUs: "Ils nous font confiance",
     },
     partners: {
-      btp: "Entreprises BTP",
+      btp: "Génie civil",
       mining: "Industries minières",
       healthcare: "Centres de santé",
       industrial: "Secteur industriel",
@@ -267,6 +287,7 @@ export const translations: Record<Language, Translations> = {
         title: "Proximité",
         description: "Un réseau de partenaires solide et une présence locale à Kinshasa nous permettent de répondre efficacement aux besoins de nos clients.",
       },
+      locationDescription: "au cœur des affaires en RDC",
       location: "Basée à",
       address: "6081, Avenue Lokele - C/o Restaurant Super Aubaine",
     },
@@ -369,6 +390,36 @@ export const translations: Record<Language, Translations> = {
       badge: "Témoignages",
       title: "La parole à nos clients",
       subtitle: "Découvrez ce que nos partenaires disent de notre collaboration et de la qualité de nos services.",
+      testimonials: [
+        {
+          name: "Jean-Pierre Kabongo",
+          role: "Directeur Général",
+          company: "KinBTP Construction",
+          content: "IMM Corporation a transformé la sécurité sur nos chantiers. La qualité des EPI fournis est comparable aux standards européens, à un prix accessible. Notre taux d'accidents a chuté de 60% depuis notre partenariat.",
+          rating: 5,
+        },
+        {
+          name: "Marie-Claire Tshombe",
+          role: "Responsable HSE",
+          company: "Gecamines SA",
+          content: "La réactivité et le professionnalisme d'IMM sont remarquables. Livraison en 48h, équipements personnalisés à notre image de marque, et un suivi après-vente irréprochable. Un vrai partenaire stratégique.",
+          rating: 5,
+        },
+        {
+          name: "Patrick Mbuyi",
+          role: "Administrateur",
+          company: "Hôpital Général de Kinshasa",
+          content: "Les distributeurs de gel hydroalcoolique fournis par IMM sont d'excellente qualité. L'installation a été rapide et professionnelle. Le personnel et les patients sont satisfaits.",
+          rating: 5,
+        },
+        {
+          name: "Cécile Ngandu",
+          role: "Chef de Projet",
+          company: "Congo Mining Corp",
+          content: "Nous avons équipé plus de 200 travailleurs avec les vêtements ignifugés d'IMM. La durabilité est impressionnante, même dans des conditions extrêmes. Un investissement qui en vaut la peine.",
+          rating: 5,
+        },
+      ],
     },
     cta: {
       badge: "Passez à l'action",
@@ -389,6 +440,20 @@ export const translations: Record<Language, Translations> = {
       legal: "Mentions légales",
       privacy: "Politique de confidentialité",
       rights: "Tous droits réservés.",
+      servicesList:[
+        "Équipements de sécurité",
+        "Vêtements de travail",
+        "Solutions d'hygiène",
+        "Services techniques",
+        "Fournitures professionnelles",
+      ],
+      companyList: [
+        "À propos",
+        "Pourquoi nous",
+        "Notre processus",
+        "Témoignages",
+        "Contact",
+      ],
     },
   },
   en: {
@@ -403,9 +468,10 @@ export const translations: Record<Language, Translations> = {
       contactUs: "Contact Us",
     },
     hero: {
-      badge: "Excellence & Innovation",
+      badge: "Available",
       title: "Your trusted",
       titleHighlight: "partner",
+      titleEnd: "in DRC",
       subtitle: "IMM Corporation revolutionizes service offerings in the Democratic Republic of Congo. Safety equipment, hygiene solutions and professional services - at international standards.",
       getQuote: "Get a Quote",
       discoverServices: "Discover Our Services",
@@ -415,6 +481,10 @@ export const translations: Record<Language, Translations> = {
       internationalDesc: "EU Standards",
       responsive: "Responsive",
       responsiveDesc: "Fast Delivery",
+      clientsSatisfied: "Clients Satisfied",
+      yearsExperience: "Years of Experience",
+      projectsDelivered: "Projects Delivered",
+      supportClient: "Client Support",
     },
     trust: {
       clients: "Active Clients",
@@ -424,7 +494,7 @@ export const translations: Record<Language, Translations> = {
       theyTrustUs: "They Trust Us",
     },
     partners: {
-      btp: "Construction Companies",
+      btp: "Civil Engineering",
       mining: "Mining Industries",
       healthcare: "Healthcare Centers",
       industrial: "Industrial Sector",
@@ -453,6 +523,7 @@ export const translations: Record<Language, Translations> = {
       },
       location: "Based in",
       address: "6081, Avenue Lokele - C/o Restaurant Super Aubaine",
+      locationDescription: "in the heart of business in DRC",
     },
     services: {
       badge: "Our Services",
@@ -553,6 +624,36 @@ export const translations: Record<Language, Translations> = {
       badge: "Testimonials",
       title: "What Our Clients Say",
       subtitle: "Discover what our partners say about our collaboration and the quality of our services.",
+      testimonials: [
+        {
+          name: "Jean-Pierre Kabongo",
+          role: "General Manager",
+          company: "KinBTP Construction",
+          content: "IMM Corporation has transformed safety on our construction sites. The quality of the PPE provided is comparable to European standards, at an affordable price. Our accident rate has dropped by 60% since our partnership.",
+          rating: 5,
+        },
+        {
+          name: "Marie-Claire Tshombe",
+          role: "Health and Safety Manager",
+          company: "Gecamines SA",
+          content: "The responsiveness and professionalism of IMM are remarkable. Delivery in 48 hours, customized equipment to our brand, and impeccable after-sales service. A true strategic partner.",
+          rating: 5,
+        },
+        {
+          name: "Patrick Mbuyi",
+          role: "Administrator",
+          company: "Hôpital Général de Kinshasa",
+          content: "The alcohol gel dispensers provided by IMM are of excellent quality. The installation was quick and professional. The staff and patients are satisfied.",
+          rating: 5,
+        },
+        {
+          name: "Cécile Ngandu",
+          role: "Project Manager",
+          company: "Congo Mining Corp",
+          content: "We equipped more than 200 workers with IMM's flame-resistant clothing. The durability is impressive, even in extreme conditions. A worthwhile investment.",
+          rating: 5,
+        },
+      ],
     },
     cta: {
       badge: "Take Action",
@@ -573,6 +674,20 @@ export const translations: Record<Language, Translations> = {
       legal: "Legal Notice",
       privacy: "Privacy Policy",
       rights: "All rights reserved.",
+      servicesList: [
+        "Safety Equipment",
+        "Work Clothing",
+        "Hygiene Solutions",
+        "Technical Services",
+        "Professional Supplies",
+      ],
+      companyList: [
+        "About",
+        "Why Us",
+        "Our Process",
+        "Testimonials",
+        "Contact",
+      ],
     },
   },
 };

@@ -3,24 +3,29 @@
 import { motion } from "framer-motion";
 import { SectionWrapper } from "./section-wrapper";
 import { Building2, Truck, HardHat, Hospital, Factory, Landmark } from "lucide-react";
+import { useTranslation } from "@/contexts/language-context";
 
-const partners = [
-  { icon: Building2, name: "Génie civil" },
-  { icon: HardHat, name: "Industries minières" },
-  { icon: Hospital, name: "Centres de santé" },
-  { icon: Factory, name: "Secteur industriel" },
-  { icon: Landmark, name: "Institutions publiques" },
-  { icon: Truck, name: "Transport & Logistique" },
+export function TrustSection() {
+  const { t } = useTranslation();
+
+  const partners = [
+  { icon: Building2, name: t.partners.btp },
+  { icon: HardHat, name: t.partners.mining },
+  { icon: Hospital, name: t.partners.healthcare },
+  { icon: Factory, name: t.partners.industrial },
+  { icon: Landmark, name: t.partners.public },
+  { icon: Truck, name: t.partners.transport },
 ];
 
 const stats = [
-  { value: "500+", label: "Clients actifs", suffix: "" },
-  { value: "10", label: "Années d'expertise", suffix: "+" },
-  { value: "98", label: "Taux de satisfaction", suffix: "%" },
-  { value: "48h", label: "Délai de livraison", suffix: "" },
+  { value: "500+", label: t.trust.clients, suffix: "" },
+  { value: "10", label: t.trust.experience, suffix: "+" },
+  { value: "98", label: t.trust.satisfaction, suffix: "%" },
+  { value: "48h", label: t.trust.delivery, suffix: "" },
 ];
 
-export function TrustSection() {
+
+
   return (
     <SectionWrapper bg="secondary">
       <div className="space-y-16">
@@ -48,7 +53,7 @@ export function TrustSection() {
         <div className="flex items-center gap-4">
           <div className="h-px flex-1 bg-border" />
           <span className="text-xs font-semibold uppercase tracking-widest text-foreground-muted">
-            Ils nous font confiance
+            {t.trust.theyTrustUs}
           </span>
           <div className="h-px flex-1 bg-border" />
         </div>

@@ -4,26 +4,30 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { LogoFull } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
+import { useTranslation } from "@/contexts/language-context";
+import { LanguageToggle } from "./language-toggle";
 
-const navLinks = [
-  { href: "/", label: "Accueil" },
-  { href: "/about", label: "À propos" },
-  { href: "/services", label: "Services" },
-  { href: "/whyus", label: "Pourquoi nous" },
-  { href: "/process", label: "Processus" },
-  { href: "/testimonials", label: "Témoignages" },
-  { href: "/cta", label: "Contact" },
-];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { t } = useTranslation();
+  
+  
+  const navLinks = [
+    { href: "/", label: t.nav.home },
+    { href: "/about", label: t.nav.about },
+    { href: "/services", label: t.nav.services },
+    { href: "/whyus", label: t.nav.whyUs },
+    { href: "/process", label: t.nav.process },
+    { href: "/testimonials", label: t.nav.testimonials },
+    { href: "/cta", label: t.nav.contact },
+  ];
+  // useEffect(() => {
+  //   // const handleScroll = () => setIsScrolled(window.scrollY > 20);
+  //   // window.addEventListener("scroll", handleScroll, { passive: true });
+  //   // return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   useEffect(() => {
     if (isMobileOpen) {
@@ -60,17 +64,20 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
+          <LanguageToggle />
           <a
             href="/cta"
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_4px_16px_rgba(212,175,55,0.3)]"
           >
-            Nous contacter
+            {t.nav.contactUs}
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-3 lg:hidden">
           <ThemeToggle />
+          <LanguageToggle />
+
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             className="z-50 flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card"
@@ -113,7 +120,7 @@ export function Navbar() {
             onClick={() => setIsMobileOpen(false)}
             className="mt-4 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground"
           >
-            Nous contacter
+            {t.nav.contactUs}
           </a>
         </div>
       </div>

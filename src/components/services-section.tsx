@@ -12,77 +12,63 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslation } from "@/contexts/language-context";
+
+export function ServicesSection() {
+  const {t} = useTranslation()
 
 const services = [
   {
     icon: HardHat,
-    title: "Équipements de Protection Individuelle",
-    description:
-      "Casques, gants, lunettes, harnais et équipements complets conformes aux normes internationales. Protection optimale pour chaque corps de métier.",
-    features: [
-      "Conformes aux normes CE",
-      "Personnalisables",
-      "Prix compétitifs",
-    ],
+    title: t.services.items.epi.title,
+    description: t.services.items.epi.description,
+    features: t.services.items.epi.features,
     image: "/images/individuelle.jpg",
   },
   {
     icon: Shirt,
-    title: "Vêtements de Travail",
-    description:
-      "Vêtements ignifugés en matériaux haute performance (nylon, coton traité). Résistants au feu, durables et confortables pour une utilisation quotidienne.",
-    features: [
-      "Matériaux ignifugés",
-      "Haute visibilité",
-      "Sur mesure disponible",
-    ],
+    title: t.services.items.workwear.title,
+    description: t.services.items.workwear.description,
+    features: t.services.items.workwear.features,
     image: "/images/equipement.jpg",
   },
   {
     icon: Droplets,
-    title: "Solutions d'Hygiène",
-    description:
-      "Distributeurs de gel hydroalcoolique et produits d'hygiène professionnels. Solutions complètes pour les espaces de travail et lieux publics.",
-    features: [
-      "Distributeurs automatiques",
-      "Gel certifié",
-      "Installation incluse",
-    ],
+    title: t.services.items.hygiene.title,
+    description: t.services.items.hygiene.description,
+    features: t.services.items.hygiene.features,
     image: "/images/hygiene.jpg",
   },
   {
     icon: ShieldCheck,
-    title: "Équipements de Sécurité",
-    description:
-      "Signalisation, extincteurs, matériel de premiers secours et équipements de sécurité incendie. Tout le nécessaire pour un environnement de travail sûr.",
-    features: ["Normes internationales", "Formation incluse", "Maintenance"],
+    title: t.services.items.safety.title,
+    description: t.services.items.safety.description,
+    features: t.services.items.safety.features,
     image: "/images/securite.jpg",
   },
   {
     icon: Wrench,
-    title: "Services Techniques",
-    description:
-      "Conseil, installation et maintenance de vos équipements. Nos experts vous accompagnent de l'audit à la mise en service complète.",
-    features: ["Audit gratuit", "Installation", "Suivi personnalisé"],
+    title: t.services.items.technical.title,
+    description: t.services.items.technical.description,
+    features: t.services.items.technical.features,
     image: "/images/services_tech.jpg",
   },
   {
     icon: Package,
-    title: "Fournitures Professionnelles",
-    description:
-      "Large gamme de fournitures pour entreprises et institutions. Commandes en gros avec des tarifs préférentiels et livraison rapide.",
-    features: ["Catalogue étendu", "Tarifs dégressifs", "Livraison express"],
+    title: t.services.items.supplies.title,
+    description: t.services.items.supplies.description,
+    features: t.services.items.supplies.features,
     image: "/images/fournitures.jpg",
   },
 ];
 
-export function ServicesSection() {
+
   return (
     <SectionWrapper id="services" bg="secondary">
       <SectionHeader
-        badge="Nos services"
-        title="Des solutions complètes pour votre sécurité"
-        description="IMM Corporation propose une offre diversifiée de produits et services répondant aux plus hauts standards de qualité, adaptés au marché congolais."
+        badge={t.services.badge}
+        title={t.services.title}
+        description={t.services.subtitle}
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -136,9 +122,10 @@ export function ServicesSection() {
             <Image
               src={service.image}
               alt={service.title}
+              loading="eager"
               width={400}
               height={400}
-              className="h-80 group-hover:h-50 w-full object-cover rounded-lg transition-all duration-300"
+              className="h-80 group-hover:h-64 w-full object-cover rounded-lg transition-all duration-300"
             />
             <div>
               <h3 className="text-lg font-bold text-foreground">
@@ -159,10 +146,10 @@ export function ServicesSection() {
                     </span>
                   ))}
                 </div>
-                <div className="mt-6 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                {/* <div className="mt-6 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
                   En savoir plus
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

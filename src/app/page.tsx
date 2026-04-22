@@ -1,4 +1,3 @@
-import { Hero } from "@/components/hero-clean";
 import { TrustSection } from "@/components/trust-section";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -8,22 +7,15 @@ import { WhyUsSection } from "@/components/why-us-section";
 import { ProcessSection } from "@/components/process-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { CtaSection } from "@/components/cta-section";
+import { Hero } from "@/components/hero";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main>
         <Hero />
         <TrustSection />
-        <AboutSection />
-        <ServicesSection />
-        <WhyUsSection />
-        <ProcessSection />
-        <TestimonialsSection />
-        <CtaSection />
       </main>
-      <Footer />
     </>
   );
 }

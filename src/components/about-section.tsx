@@ -3,41 +3,39 @@
 import { motion } from "framer-motion";
 import { SectionWrapper, SectionHeader } from "./section-wrapper";
 import { Target, Eye, Award, Users } from "lucide-react";
+import { useTranslation } from "@/contexts/language-context";
 
-const values = [
+export function AboutSection() {
+    const { t } = useTranslation();
+  
+  const values = [
   {
     icon: Target,
-    title: "Notre Mission",
-    description:
-      "Révolutionner l'offre de services en RDC en capitalisant sur le savoir-faire acquis en Occident par nos fondateurs, pour proposer des solutions de qualité internationale.",
+    title: t.about.mission.title,
+    description: t.about.mission.description,
   },
   {
     icon: Eye,
-    title: "Notre Vision",
-    description:
-      "Contribuer activement au développement de l'économie congolaise en rendant accessibles des équipements et services professionnels de premier ordre.",
+    title: t.about.vision.title,
+    description: t.about.vision.description,
   },
   {
     icon: Award,
-    title: "Excellence",
-    description:
-      "Chaque produit et service est soumis à des standards rigoureux de qualité. Nous ne transigeons jamais sur la sécurité et la fiabilité.",
+    title: t.about.excellence.title,
+    description: t.about.excellence.description,
   },
   {
     icon: Users,
-    title: "Proximité",
-    description:
-      "Un réseau de partenaires solide et une présence locale à Kinshasa nous permettent de répondre efficacement aux besoins de nos clients.",
+    title: t.about.proximity.title,
+    description: t.about.proximity.description,
   },
 ];
-
-export function AboutSection() {
   return (
     <SectionWrapper id="a-propos" bg="default">
       <SectionHeader
-        badge="Qui sommes-nous"
-        title="Une entreprise multi-services d'excellence"
-        description="Fondée sur une vision d'excellence, IMM Corporation est active dans les secteurs-clés de l'économie congolaise. Nous développons un réseau de partenaires capable de répondre aux besoins tant professionnels que particuliers."
+        badge={t.about.badge}
+        title={t.about.title}
+        description={t.about.subtitle}
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
@@ -74,12 +72,11 @@ export function AboutSection() {
       >
         <div className="text-center">
           <p className="text-lg font-semibold text-foreground">
-            Basée à{" "}
-            <span className="text-primary">Kinshasa-Gombe</span>, au cœur
-            des affaires en RDC
+            {t.about.location}{" "}
+            <span className="text-primary">Kinshasa-Gombe</span>, {t.about.locationDescription}
           </p>
           <p className="mt-1 text-sm text-foreground-muted">
-            6081, Avenue Lokele — C/o Restaurant Super Aubaine
+            {t.about.address}
           </p>
         </div>
       </motion.div>

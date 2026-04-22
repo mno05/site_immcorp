@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Globe, Zap } from "lucide-react";
 import Image from "next/image";
+import { useTranslation } from "@/contexts/language-context";
 
 export function Hero() {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col">
     <Image
@@ -31,18 +33,15 @@ export function Hero() {
            
 
             <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Votre partenaire de{" "}
+             {t.hero.title+" "}
               <span className="bg-linear-to-r from-gold-800 via-gold-500 to-gold-600 bg-clip-text text-transparent dark:from-gold-400 dark:via-gold-300 dark:to-gold-500">
-                confiance
+                {t.hero.titleHighlight}
               </span>{" "}
-              en RDC
+              {t.hero.titleEnd}
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground">
-              IMM Corporation révolutionne l&apos;offre de services en
-              République Démocratique du Congo. Équipements de sécurité,
-              solutions d&apos;hygiène et services professionnels — au standard
-              international.
+              {t.hero.subtitle}
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -50,14 +49,14 @@ export function Hero() {
                 href="#contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
               >
-                Demander un devis
+                {t.hero.getQuote}
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
                 href="#services"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary hover:bg-background-secondary"
               >
-                Découvrir nos services
+                {t.hero.discoverServices}
               </a>
             </div>
 
@@ -69,9 +68,9 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
-                    Certifié
+                    {t.hero.certified}
                   </p>
-                  <p className="text-xs text-foreground-muted">Qualité ISO</p>
+                  <p className="text-xs text-foreground-muted">{t.hero.certifiedDesc}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -80,9 +79,9 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
-                    International
+                    {t.hero.international}
                   </p>
-                  <p className="text-xs text-foreground-muted">Standards EU</p>
+                  <p className="text-xs text-foreground-muted">{t.hero.internationalDesc}</p>
                 </div>
               </div>
               <div className="hidden items-center gap-2 sm:flex">
@@ -91,10 +90,10 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
-                    Réactif
+                    {t.hero.responsive}
                   </p>
                   <p className="text-xs text-foreground-muted">
-                    Livraison rapide
+                    {t.hero.responsiveDesc}
                   </p>
                 </div>
               </div>
@@ -116,10 +115,10 @@ export function Hero() {
                   {/* Stats grid */}
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { value: "500+", label: "Clients satisfaits" },
-                      { value: "10+", label: "Années d'expérience" },
-                      { value: "1000+", label: "Projets livrés" },
-                      { value: "24/7", label: "Support client" },
+                      { value: "500+", label: t.hero.clientsSatisfied },
+                      { value: "10+", label: t.hero.yearsExperience },
+                      { value: "1000+", label: t.hero.projectsDelivered },
+                      { value: "24/7", label: t.hero.supportClient },
                     ].map((stat) => (
                       <div
                         key={stat.label}
@@ -157,7 +156,7 @@ export function Hero() {
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-emerald-500" />
                   <span className="text-xs font-semibold text-foreground">
-                    Disponible
+                    {t.hero.badge}
                   </span>
                 </div>
               </motion.div>

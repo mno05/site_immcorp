@@ -14,10 +14,10 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button
-        className="relative h-9 w-9 rounded-full border border-border bg-card"
-        aria-label="Toggle theme"
-      />
+        <button
+          className="relative h-4 w-4 rounded-full border border-border bg-card"
+          aria-label="Toggle theme"
+        />
     );
   }
 
@@ -26,7 +26,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card transition-all duration-300 hover:border-primary hover:shadow-[0_0_12px_rgba(212,175,55,0.2)]"
+      className="relative flex h-6 w-6 md:h-9 md:w-9 items-center cursor-pointer justify-center rounded-full border border-border bg-card transition-all duration-300 hover:border-primary hover:shadow-[0_0_12px_rgba(212,175,55,0.2)]"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       <Sun

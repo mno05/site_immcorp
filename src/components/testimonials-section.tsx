@@ -3,53 +3,22 @@
 import { motion } from "framer-motion";
 import { SectionWrapper, SectionHeader } from "./section-wrapper";
 import { Star, Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "Jean-Pierre Kabongo",
-    role: "Directeur Général",
-    company: "KinBTP Construction",
-    content:
-      "IMM Corporation a transformé la sécurité sur nos chantiers. La qualité des EPI fournis est comparable aux standards européens, à un prix accessible. Notre taux d'accidents a chuté de 60% depuis notre partenariat.",
-    rating: 5,
-  },
-  {
-    name: "Marie-Claire Tshombe",
-    role: "Responsable HSE",
-    company: "Gecamines SA",
-    content:
-      "La réactivité et le professionnalisme d'IMM sont remarquables. Livraison en 48h, équipements personnalisés à notre image de marque, et un suivi après-vente irréprochable. Un vrai partenaire stratégique.",
-    rating: 5,
-  },
-  {
-    name: "Patrick Mbuyi",
-    role: "Administrateur",
-    company: "Hôpital Général de Kinshasa",
-    content:
-      "Les distributeurs de gel hydroalcoolique fournis par IMM sont d'excellente qualité. L'installation a été rapide et professionnelle. Le personnel et les patients sont satisfaits.",
-    rating: 5,
-  },
-  {
-    name: "Cécile Ngandu",
-    role: "Chef de Projet",
-    company: "Congo Mining Corp",
-    content:
-      "Nous avons équipé plus de 200 travailleurs avec les vêtements ignifugés d'IMM. La durabilité est impressionnante, même dans des conditions extrêmes. Un investissement qui en vaut la peine.",
-    rating: 5,
-  },
-];
+import { useTranslation } from "@/contexts/language-context";
 
 export function TestimonialsSection() {
+  const {t} = useTranslation();
+  
+
   return (
     <SectionWrapper id="temoignages" bg="default">
       <SectionHeader
-        badge="Témoignages"
-        title="La parole à nos clients"
-        description="Découvrez ce que nos partenaires disent de notre collaboration et de la qualité de nos services."
+        badge={t.testimonials.badge}
+        title={t.testimonials.title}
+        description={t.testimonials.subtitle}
       />
 
       <div className="grid gap-6 sm:grid-cols-2">
-        {testimonials.map((testimonial, i) => (
+        {t.testimonials.testimonials.map((testimonial, i) => (
           <motion.div
             key={testimonial.name}
             initial={{ opacity: 0, y: 24 }}

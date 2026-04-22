@@ -1,25 +1,30 @@
+"use client"
 import { LogoFull } from "./logo";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useTranslation } from "@/contexts/language-context";
 
-const footerLinks = {
-  services: [
-    { label: "Équipements de sécurité", href: "#services" },
-    { label: "Vêtements de travail", href: "#services" },
-    { label: "Solutions d'hygiène", href: "#services" },
-    { label: "Services techniques", href: "#services" },
-    { label: "Fournitures professionnelles", href: "#services" },
-  ],
-  entreprise: [
-    { label: "À propos", href: "#a-propos" },
-    { label: "Pourquoi nous", href: "#pourquoi-nous" },
-    { label: "Notre processus", href: "#processus" },
-    { label: "Témoignages", href: "#temoignages" },
-    { label: "Contact", href: "#contact" },
-  ],
-};
+
 
 export function Footer() {
+  const {t} = useTranslation();
   const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+  services: [
+    { label: t.footer.servicesList[0], href: "/services#security-equipment" },
+    { label: t.footer.servicesList[1], href: "/services#workwear" },
+    { label: t.footer.servicesList[2], href: "/services#hygiene-solutions" },
+    { label: t.footer.servicesList[3], href: "/services#technical-services" },
+    { label: t.footer.servicesList[4], href: "/services#professional-supplies" },
+  ],
+  entreprise: [
+    { label: t.footer.companyList[0], href: "/about" },
+    { label: t.footer.companyList[1], href: "/why-us" },
+    { label: t.footer.companyList[2], href: "/process" },
+    { label: t.footer.companyList[3], href: "/testimonials" },
+    { label: t.footer.companyList[4], href: "/contact" },
+  ],
+};
 
   return (
     <footer id="contact" className="border-t border-border bg-navbar-bg">
@@ -29,8 +34,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <LogoFull />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-card">
-              Entreprise multi-services d&apos;excellence, active dans les
-              secteurs-clés de l&apos;économie congolaise depuis plus de 10 ans.
+              {t.footer.description}
             </p>
 
             {/* Contact info */}
@@ -70,7 +74,7 @@ export function Footer() {
           {/* Services links */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-card">
-              Services
+              {t.footer.services}
             </h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.services.map((link) => (
@@ -89,7 +93,7 @@ export function Footer() {
           {/* Company links */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-card">
-              Entreprise
+              {t.footer.company}
             </h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.entreprise.map((link) => (
@@ -108,17 +112,17 @@ export function Footer() {
           {/* CTA column */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-card">
-              Besoin d&apos;un devis ?
+              {t.footer.needQuote}
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-card">
-              Décrivez votre besoin et recevez une proposition personnalisée sous 24h.
+              {t.footer.needQuoteDesc}
             </p>
             <a
               href="mailto:contact@immcorpsarl.com?subject=Demande de devis"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_4px_16px_rgba(212,175,55,0.3)]"
             >
               <Mail className="h-4 w-4" />
-              Nous écrire
+              {t.footer.writeUs}
             </a>
           </div>
         </div>
@@ -126,14 +130,14 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-xs text-card">
-            &copy; {currentYear} IMM Corporation SARL. Tous droits réservés.
+            &copy; {currentYear} IMM Corporation SARL. {t.footer.rights}
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-card transition-colors hover:text-primary">
-              Mentions légales
+              {t.footer.legal}
             </a>
             <a href="#" className="text-xs text-card transition-colors hover:text-primary">
-              Politique de confidentialité
+              {t.footer.privacy}
             </a>
           </div>
         </div>

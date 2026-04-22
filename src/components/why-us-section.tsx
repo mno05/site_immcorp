@@ -10,59 +10,57 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
+import { useTranslation } from "@/contexts/language-context";
+
+export function WhyUsSection() {
+  const {t} = useTranslation()
 
 const differentiators = [
   {
     icon: Globe,
-    title: "Standards internationaux",
-    description:
-      "Nos produits respectent les normes européennes et internationales. Un savoir-faire acquis en Occident, appliqué localement.",
+    title: t.whyUs.internationalStandards.title,
+    description: t.whyUs.internationalStandards.description,
     highlight: true,
   },
   {
     icon: Banknote,
-    title: "Prix imbattables",
-    description:
-      "Des équipements de qualité à des prix qui battent toute concurrence sur le marché congolais, sans compromis sur la sécurité.",
+    title: t.whyUs.unbeatablePrices.title,
+    description: t.whyUs.unbeatablePrices.description,
     highlight: false,
   },
   {
     icon: BadgeCheck,
-    title: "Produits personnalisables",
-    description:
-      "Chaque équipement peut être adapté en fonction des besoins spécifiques de vos activités et de vos équipes.",
+    title: t.whyUs.customizableProducts.title,
+    description: t.whyUs.customizableProducts.description,
     highlight: false,
   },
   {
     icon: Clock,
-    title: "Livraison rapide",
-    description:
-      "Un stock local à Kinshasa et une logistique optimisée pour des délais de livraison parmi les plus courts du marché.",
+    title: t.whyUs.fastDelivery.title,
+    description: t.whyUs.fastDelivery.description,
     highlight: true,
   },
   {
     icon: Headphones,
-    title: "Accompagnement dédié",
-    description:
-      "Un conseiller dédié pour chaque client, de l'identification des besoins jusqu'au service après-vente.",
+    title: t.whyUs.dedicatedSupport.title,
+    description: t.whyUs.dedicatedSupport.description,
     highlight: false,
   },
   {
     icon: Sparkles,
-    title: "Innovation continue",
-    description:
-      "Nous introduisons régulièrement de nouveaux produits et technologies pour anticiper vos besoins futurs.",
+    title: t.whyUs.continuousInnovation.title,
+    description: t.whyUs.continuousInnovation.description,
     highlight: false,
   },
 ];
 
-export function WhyUsSection() {
+
   return (
     <SectionWrapper id="pourquoi-nous" bg="default">
       <SectionHeader
-        badge="Pourquoi nous choisir"
-        title="Ce qui nous distingue"
-        description="IMM Corporation n'est pas un simple fournisseur. Nous sommes un partenaire stratégique engagé dans la réussite de vos projets."
+        badge={t.whyUs.badge}
+        title={t.whyUs.title}
+        description={t.whyUs.subtitle}
       />
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

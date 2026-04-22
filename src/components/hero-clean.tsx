@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Globe, Zap } from "lucide-react";
 import { useTranslation } from "@/contexts/language-context";
 
-export function Hero() {
+export function HeroClean() {
   const { t } = useTranslation();
 
   return (

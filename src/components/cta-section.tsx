@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Mail } from "lucide-react";
+import { useTranslation } from "@/contexts/language-context";
 
 export function CtaSection() {
+  const {t} = useTranslation();
   return (
     <section className="relative overflow-hidden bg-background-tertiary">
       <div className="pointer-events-none absolute inset-0">
@@ -20,19 +22,17 @@ export function CtaSection() {
       >
         <div className="mx-auto max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full border border-gold-300/40 bg-gold-50! px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-700 dark:border-gold-700/40 dark:bg-gold-900/30 dark:text-gold-400">
-            Passez à l&apos;action
+            {t.cta.badge}
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Prêt à sécuriser votre{" "}
+            {t.cta.title}{" "}
             <span className="bg-linear-to-r from-gold-600 via-gold-400 to-gold-500 bg-clip-text text-transparent dark:from-gold-400 dark:via-gold-300 dark:to-gold-500">
-              environnement de travail
+              {t.cta.titleHighlight}
             </span>{" "}
             ?
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-foreground-secondary">
-            Contactez-nous dès aujourd&apos;hui pour un devis gratuit et
-            personnalisé. Notre équipe d&apos;experts est à votre disposition pour
-            répondre à toutes vos questions.
+            {t.cta.subtitle}
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -40,7 +40,7 @@ export function CtaSection() {
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
             >
-              Demander un devis gratuit
+              {t.cta.getFreeQuote}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
@@ -48,19 +48,19 @@ export function CtaSection() {
               className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-4 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary hover:bg-card"
             >
               <Phone className="h-4 w-4 text-primary" />
-              +243 858 609 331
+              {t.cta.callUs}
             </a>
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-2 text-sm text-foreground-muted">
+          {/* <div className="mt-8 flex items-center justify-center gap-2 text-sm text-foreground-muted">
             <Mail className="h-4 w-4" />
             <a
               href="mailto:contact@immcorpsarl.com"
               className="transition-colors hover:text-primary"
             >
-              contact@immcorpsarl.com
+              {t.cta.emailUs}
             </a>
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </section>
