@@ -22,13 +22,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="border-t border-border bg-background-secondary">
+    <footer id="contact" className="border-t border-border bg-navbar-bg">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-4">
           {/* Brand column */}
           <div className="lg:col-span-1">
             <LogoFull />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-foreground-secondary">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-card">
               Entreprise multi-services d&apos;excellence, active dans les
               secteurs-clés de l&apos;économie congolaise depuis plus de 10 ans.
             </p>
@@ -37,26 +37,26 @@ export function Footer() {
             <div className="mt-6 space-y-3">
               <a
                 href="tel:+243858609331"
-                className="flex items-center gap-3 text-sm text-foreground-secondary transition-colors hover:text-primary"
+                className="flex items-center gap-3 text-sm text-card transition-colors hover:text-primary"
               >
                 <Phone className="h-4 w-4 text-primary" />
                 +243 858 609 331
               </a>
               <a
                 href="tel:+243858609332"
-                className="flex items-center gap-3 text-sm text-foreground-secondary transition-colors hover:text-primary"
+                className="flex items-center gap-3 text-sm text-card transition-colors hover:text-primary"
               >
                 <Phone className="h-4 w-4 text-primary" />
                 +243 858 609 332
               </a>
               <a
                 href="mailto:contact@immcorpsarl.com"
-                className="flex items-center gap-3 text-sm text-foreground-secondary transition-colors hover:text-primary"
+                className="flex items-center gap-3 text-sm text-card transition-colors hover:text-primary"
               >
                 <Mail className="h-4 w-4 text-primary" />
                 contact@immcorpsarl.com
               </a>
-              <div className="flex items-start gap-3 text-sm text-foreground-secondary">
+              <div className="flex items-start gap-3 text-sm text-card">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <span>
                   6081, Avenue Lokele
@@ -69,7 +69,7 @@ export function Footer() {
 
           {/* Services links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-card">
               Services
             </h3>
             <ul className="mt-4 space-y-3">
@@ -77,7 +77,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-foreground-secondary transition-colors hover:text-primary"
+                    className="text-sm text-card transition-colors hover:text-primary"
                   >
                     {link.label}
                   </a>
@@ -88,7 +88,7 @@ export function Footer() {
 
           {/* Company links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-card">
               Entreprise
             </h3>
             <ul className="mt-4 space-y-3">
@@ -96,7 +96,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-foreground-secondary transition-colors hover:text-primary"
+                    className="text-sm text-card transition-colors hover:text-primary"
                   >
                     {link.label}
                   </a>
@@ -107,10 +107,10 @@ export function Footer() {
 
           {/* CTA column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-card">
               Besoin d&apos;un devis ?
             </h3>
-            <p className="mt-4 text-sm leading-relaxed text-foreground-secondary">
+            <p className="mt-4 text-sm leading-relaxed text-card">
               Décrivez votre besoin et recevez une proposition personnalisée sous 24h.
             </p>
             <a
@@ -125,14 +125,14 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-xs text-foreground-muted">
+          <p className="text-xs text-card">
             &copy; {currentYear} IMM Corporation SARL. Tous droits réservés.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-foreground-muted transition-colors hover:text-primary">
+            <a href="#" className="text-xs text-card transition-colors hover:text-primary">
               Mentions légales
             </a>
-            <a href="#" className="text-xs text-foreground-muted transition-colors hover:text-primary">
+            <a href="#" className="text-xs text-card transition-colors hover:text-primary">
               Politique de confidentialité
             </a>
           </div>

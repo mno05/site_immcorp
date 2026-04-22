@@ -35,7 +35,9 @@
   --accent: #D4AF37;
   --accent-foreground: #1C1C1E;
   --ring: #D4AF37;
-  --navbar-bg: rgba(255, 255, 255, 0.85);
+  /* --navbar-bg: rgba(255, 255, 255, 0.85); */
+  --navbar-bg: rgba(12, 12, 14, 0.85);
+  --navbar-text: #F0EDE6;
   --navbar-border: rgba(229, 228, 223, 0.8);
   --section-overlay: rgba(255, 255, 255, 0.6);
   --shadow-color: rgba(0, 0, 0, 0.06);
@@ -59,7 +61,9 @@
   --accent: #B8960C;
   --accent-foreground: #F0EDE6;
   --ring: #D4AF37;
-  --navbar-bg: rgba(12, 12, 14, 0.85);
+  /* --navbar-bg: rgba(12, 12, 14, 0.85); */
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --navbar-text: #1C1C1E;
   --navbar-border: rgba(44, 44, 46, 0.8);
   --section-overlay: rgba(12, 12, 14, 0.6);
   --shadow-color: rgba(0, 0, 0, 0.3);
@@ -127,13 +131,16 @@ html {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--background-secondary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-strong);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--foreground-muted);
 }

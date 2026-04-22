@@ -57,15 +57,15 @@ export function LogoFull({ className = "" }: { className?: string }) {
 
   if (!mounted) return <div className="h-10 w-10" />; // Placeholder pendant le chargement
 
-  const src = resolvedTheme === "dark" ? "/images/logo-dark.png" : "/images/logo-light.png";
+  const src = resolvedTheme === "dark" ? "/images/logo-light.png" : "/images/logo-dark.png";
   return (
 
     <div className={`flex items-center gap-2 ${className}`}>
       <Image src={src} alt="IMM Corporation Logo" className="w-10 md:w-15  h-9 md:h-12" width={100} height={100} />
       <div className="flex items-baseline gap-1">
-        <span className="text-sm md:text-lg font-light tracking-wide text-foreground">IMM</span>
-        <span className="text-sm md:text-lg font-bold tracking-wide text-foreground">CORPORATION</span>
-        <span className="text-[8px] md:text-xs font-light tracking-widest text-foreground-muted">SARL</span>
+        <span className="text-sm md:text-lg font-light tracking-wide text-card">IMM</span>
+        <span className="text-sm md:text-lg font-bold tracking-wide text-card">CORPORATION</span>
+        <span className="text-[8px] md:text-xs font-light tracking-widest text-card">SARL</span>
       </div>
     </div>
   );

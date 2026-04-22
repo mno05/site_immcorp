@@ -6,13 +6,13 @@ import { LogoFull } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
-  { href: "#accueil", label: "Accueil" },
-  { href: "#a-propos", label: "À propos" },
-  { href: "#services", label: "Services" },
-  { href: "#pourquoi-nous", label: "Pourquoi nous" },
-  { href: "#processus", label: "Processus" },
-  { href: "#temoignages", label: "Témoignages" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Accueil" },
+  { href: "/about", label: "À propos" },
+  { href: "/services", label: "Services" },
+  { href: "/whyus", label: "Pourquoi nous" },
+  { href: "/process", label: "Processus" },
+  { href: "/testimonials", label: "Témoignages" },
+  { href: "/cta", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -37,15 +37,9 @@ export function Navbar() {
   }, [isMobileOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-navbar-bg backdrop-blur-xl shadow-[0_1px_3px_var(--shadow-color)]"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navbar-bg backdrop-blur-xl shadow-[0_1px_3px_var(--shadow-color)]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#accueil" className="z-50">
+        <a href="/" className="z-50">
           <LogoFull />
         </a>
 
@@ -55,7 +49,9 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2 text-sm text-foreground font-medium transition-colors hover:bg-background-tertiary hover:text-foreground"
+              className={`rounded-lg px-3 py-2 border-primary text-sm text-card font-medium transition-colors hover:bg-background-tertiary hover:text-foreground ${
+                window.location.pathname === link.href ? "border-b-[0.2px]" : ""
+              }`}
             >
               {link.label}
             </a>
@@ -65,7 +61,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
           <a
-            href="#contact"
+            href="/cta"
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_4px_16px_rgba(212,175,55,0.3)]"
           >
             Nous contacter
@@ -91,7 +87,7 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       <div
-        className={`fixed inset-0 z-40 bg-background transition-all duration-300 lg:hidden ${
+        className={`absolute top-full left-0 right-0 z-40 py-4 bg-background transition-all duration-300 lg:hidden ${
           isMobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -103,13 +99,17 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileOpen(false)}
-              className="text-2xl font-medium text-foreground-secondary transition-colors hover:text-primary"
+              className={`text-2xl font-medium text-foreground-secondary transition-colors hover:text-primary ${
+                window.location.pathname === link.href
+                  ? "bg-background-tertiary rounded-lg px-4 py-2 w-full text-center "
+                  : ""
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#contact"
+            href="/cta"
             onClick={() => setIsMobileOpen(false)}
             className="mt-4 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground"
           >

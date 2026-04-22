@@ -5,7 +5,7 @@ import { SectionWrapper } from "./section-wrapper";
 import { Building2, Truck, HardHat, Hospital, Factory, Landmark } from "lucide-react";
 
 const partners = [
-  { icon: Building2, name: "Entreprises BTP" },
+  { icon: Building2, name: "Génie civil" },
   { icon: HardHat, name: "Industries minières" },
   { icon: Hospital, name: "Centres de santé" },
   { icon: Factory, name: "Secteur industriel" },

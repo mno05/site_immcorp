@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "@/contexts/language-context";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IMM Corporation SARL — Équipements de Sécurité & Services Professionnels en RDC",
+  title:
+    "IMM Corporation SARL — Équipements de Sécurité & Services Professionnels en RDC",
   description:
     "IMM Corporation est une entreprise multi-services basée à Kinshasa, spécialisée dans les équipements de sécurité, vêtements de travail et solutions d'hygiène aux standards internationaux.",
   keywords: [
@@ -48,7 +52,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
