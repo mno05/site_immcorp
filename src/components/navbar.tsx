@@ -6,12 +6,15 @@ import { LogoFull } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
 import { useTranslation } from "@/contexts/language-context";
 import { LanguageToggle } from "./language-toggle";
-
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   // const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const { t } = useTranslation();
+  const currentPath = usePathname();
+
+  
   
   
   const navLinks = [
@@ -54,7 +57,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={`rounded-lg px-3 py-2 border-primary text-sm text-card font-medium transition-colors hover:bg-background-tertiary hover:text-foreground ${
-                window.location.pathname === link.href ? "border-b-[0.2px]" : ""
+                currentPath === link.href ? "border-b-[0.2px]" : ""
               }`}
             >
               {link.label}
@@ -107,7 +110,7 @@ export function Navbar() {
               href={link.href}
               onClick={() => setIsMobileOpen(false)}
               className={`text-2xl font-medium text-foreground-secondary transition-colors hover:text-primary ${
-                window.location.pathname === link.href
+                currentPath === link.href
                   ? "bg-background-tertiary rounded-lg px-4 py-2 w-full text-center "
                   : ""
               }`}
