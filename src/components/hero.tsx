@@ -18,12 +18,12 @@ export function Hero() {
     />
     <section
       id="accueil"
-      className="relative flex min-h-screen items-center overflow-hidden bg-background"
+      className="flex items-center overflow-hidden bg-background"
     >
       {/* Background decorative elements */}
 
 
-      <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-28 lg:px-8 lg:pt-36">
+      <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-20 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
