@@ -32,7 +32,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-4">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <LogoFull />
+            <LogoFull isFooter/>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-card">
               {t.footer.description}
             </p>

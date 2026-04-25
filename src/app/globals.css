@@ -22,7 +22,8 @@
   --background: #FFFFFF;
   --background-secondary: #F9F8F5;
   --background-tertiary: #F1EFE9;
-  --foreground: #1C1C1E;
+  /* --foreground: #1C1C1E; */
+  --foreground: #000000;
   --foreground-secondary: #4A4A4E;
   --foreground-muted: #8E8E93;
   --border: #E5E4DF;
@@ -36,7 +37,8 @@
   --accent-foreground: #1C1C1E;
   --ring: #D4AF37;
   /* --navbar-bg: rgba(255, 255, 255, 0.85); */
-  --navbar-bg: rgba(12, 12, 14, 0.85);
+  /* --navbar-bg: rgba(12, 12, 14, 0.85); */
+  --navbar-bg: #000000;
   --navbar-text: #F0EDE6;
   --navbar-border: rgba(229, 228, 223, 0.8);
   --section-overlay: rgba(255, 255, 255, 0.6);
@@ -48,7 +50,8 @@
   --background: #0C0C0E;
   --background-secondary: #141416;
   --background-tertiary: #1C1C1E;
-  --foreground: #F0EDE6;
+  /* --foreground: #F0EDE6; */
+  --foreground: #FFFFFF;
   --foreground-secondary: #B0ADA6;
   --foreground-muted: #6E6E73;
   --border: #2C2C2E;
@@ -62,7 +65,8 @@
   --accent-foreground: #F0EDE6;
   --ring: #D4AF37;
   /* --navbar-bg: rgba(12, 12, 14, 0.85); */
-  --navbar-bg: rgba(255, 255, 255, 0.85);
+  /* --navbar-bg: rgba(255, 255, 255, 0.85); */
+   --navbar-bg: #ffff;
   --navbar-text: #1C1C1E;
   --navbar-border: rgba(44, 44, 46, 0.8);
   --section-overlay: rgba(12, 12, 14, 0.6);

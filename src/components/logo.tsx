@@ -3,7 +3,13 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export function Logo({ className = "", size = 40 }: { className?: string; size?: number }) {
+export function Logo({
+  className = "",
+  size = 40,
+}: {
+  className?: string;
+  size?: number;
+}) {
   return (
     <svg
       width={size}
@@ -49,24 +55,55 @@ export function Logo({ className = "", size = 40 }: { className?: string; size?:
   );
 }
 
-export function LogoFull({ className = "" }: { className?: string }) {
+export function LogoFull({
+  className = "",
+  isFooter = false,
+}: {
+  className?: string;
+  isFooter?: boolean;
+}) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-   useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), []);
 
   if (!mounted) return <div className="h-10 w-10" />; // Placeholder pendant le chargement
 
-  const src = resolvedTheme === "dark" ? "/images/logo-light.png" : "/images/logo-dark.png";
+  const src = LogoSource(isFooter, resolvedTheme);
   return (
-
     <div className={`flex items-center gap-2 ${className}`}>
-      <Image src={src} alt="IMM Corporation Logo" className="w-10 md:w-15  h-9 md:h-12" width={100} height={100} />
+      <Image
+        src={src}
+        alt="IMM Corporation Logo"
+        className="w-10 md:w-15  h-9 md:h-12"
+        width={100}
+        height={100}
+      />
       <div className="flex items-baseline gap-1">
-        <span className="text-sm md:text-lg font-light tracking-wide text-card">IMM</span>
-        <span className="text-sm md:text-lg font-bold tracking-wide text-card">CORPORATION</span>
-        <span className="text-[8px] md:text-xs font-light tracking-widest text-card">SARL</span>
+        <span className={`text-sm md:text-lg font-light tracking-wide ${isFooter ? "text-card" : "text-foreground"}`}>
+          IMM
+        </span>
+        <span className={`text-sm md:text-lg font-bold tracking-wide ${isFooter ? "text-card" : "text-foreground"}`}>
+          CORPORATION
+        </span>
+        <span className={`text-[8px] md:text-xs font-light tracking-widest ${isFooter ? "text-card" : "text-foreground"}`}>
+          SARL
+        </span>
       </div>
     </div>
   );
 }
+
+const LogoSource = (
+  isFooter: boolean,
+  resolvedTheme: string | undefined
+): string => {
+  if (isFooter) {
+    return resolvedTheme === "dark"
+      ? "/images/logo-light.png"
+      : "/images/logo-dark.png";
+  }
+  return resolvedTheme === "dark"
+    ? "/images/logo-dark.png"
+    : "/images/logo-light.png";
+};

@@ -28,7 +28,8 @@ export function LanguageToggle() {
       aria-label={`Switch to ${language === "fr" ? "English" : "French"}`}
       title={language === "fr" ? "Passer en anglais" : "Switch to French"}
     >
-      <Globe className="h-4 w-4 text-primary" />
+      {/* <Globe className="h-4 w-4 text-primary" /> */}
+      <p className="text-xs text-primary">{language === "fr" ? "EN" : "FR"}</p>
       <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-medium text-foreground-muted opacity-0 transition-opacity hover:opacity-100">
         {language === "fr" ? "EN" : "FR"}
       </span>

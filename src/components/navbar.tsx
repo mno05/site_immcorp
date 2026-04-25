@@ -44,7 +44,7 @@ export function Navbar() {
   }, [isMobileOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navbar-bg backdrop-blur-xl shadow-[0_1px_3px_var(--shadow-color)]">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background backdrop-blur-xl shadow-[0_1px_3px_var(--shadow-color)]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="/" className="z-50">
           <LogoFull />
@@ -56,7 +56,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={`rounded-lg px-3 py-2 border-primary text-sm text-card font-medium transition-colors hover:bg-background-tertiary hover:text-foreground ${
+              className={`rounded-lg px-3 py-2 border-primary text-sm text-foreground font-medium transition-colors hover:bg-background-tertiary hover:text-foreground ${
                 currentPath === link.href ? "border-b-[0.2px]" : ""
               }`}
             >
